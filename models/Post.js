@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 // create our Post model
 class Post extends Model {}
 
-// creatae fields/columns from Post model
+// create fields/columns for Post model
 Post.init(
   {
     id: {
@@ -27,8 +27,8 @@ Post.init(
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id"
+        model: 'user',
+        key: 'id'
       }
     }
   },
@@ -36,7 +36,7 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: "post"
+    modelName: 'post'
   }
 );
 

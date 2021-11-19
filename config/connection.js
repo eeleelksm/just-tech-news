@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+
 require("dotenv").config();
 
 // create connection to our databaase, pass in your MYSQL information for username and password

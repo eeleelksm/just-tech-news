@@ -6,14 +6,18 @@ const bcrypt = require("bcrypt");
 class User extends Model {
   // set up method to run on instance data (per user) to check password
   checkPassword(loginPw) {
-    return bcrypt.compare(loginPw, this.password, (err, res) => {
-      if (res) {
-        console.log("passwords matched");
-      } else {
-        console.log("passwords did not match");
-      }
-    });
+    return bcrypt.compareSync(loginPw, this.password);
   }
+  // set up method to run on instance data (per user) to check password
+  // checkPassword(loginPw) {
+  //   return bcrypt.compare(loginPw, this.password, (err, res) => {
+  //     if (res) {
+  //       console.log("passwords matched");
+  //     } else {
+  //       console.log("passwords did not match");
+  //     }
+  //   });
+  // }
 }
 
 // create fields/columns for User model
